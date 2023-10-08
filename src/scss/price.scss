@@ -94,7 +94,7 @@
 }
 
 .price-btn:hover {
-    transform: scale(1.2);
+    border: 2px solid $stick-color;
 }
 
 .price-order {
@@ -135,7 +135,16 @@
 }
 
 .price-offer:hover {
-    transform: scale(1.2);
+    border: 2px solid $stick-color;
+}
+
+@media (min-width: 525px) and (max-width: 767px) {
+    .price-wrapper {
+        max-width: 525px;
+        .swiper {
+            width: 520px;
+        }
+    }
 }
 
 @media (min-width: 768px) {

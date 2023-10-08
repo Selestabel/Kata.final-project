@@ -11,7 +11,7 @@
   src: url(./fonts/TTLakes-Medium.ttf) format("truetype"); }
 
 body {
-  padding: 1rem;
+  position: relative;
   margin: 0;
   background-color: #f8f8f8; }
 
@@ -21,7 +21,6 @@ body {
   list-style-type: none;
   text-decoration: none; }
 
-/* Header */
 .header {
   width: 100%; }
 
@@ -55,9 +54,6 @@ body {
   height: 40px;
   border-radius: 50%; }
 
-.header-navigation__svg:hover {
-  opacity: 0.6; }
-
 .header-nav__item {
   display: flex;
   justify-content: center;
@@ -66,9 +62,6 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%; }
-
-.header-nav__item:hover {
-  opacity: 0.6; }
 
 .header-nav__list {
   display: flex;
@@ -123,12 +116,6 @@ body {
 .main__nav {
   display: flex;
   margin-left: 16px; }
-
-.caption-nav__img:hover {
-  opacity: 0.6; }
-
-.caption-name:hover {
-  opacity: 0.6; }
 
 .caption-name {
   display: none; }
@@ -199,6 +186,17 @@ body {
 .main__description_png {
   width: 7px;
   height: 10px; }
+
+@media (min-width: 525px) and (max-width: 767px) {
+  .header_wrapper {
+    max-width: 525px; }
+  .caption-wrapper {
+    margin-left: 0px; }
+  .main__content {
+    padding-top: 20px;
+    max-width: 525px;
+    display: grid;
+    grid-template-columns: 250px 150px; } }
 
 @media (min-width: 768px) {
   .header_wrapper {
@@ -363,7 +361,7 @@ body {
   .brend-wrapper .brend-item__svg {
     width: 40px;
     height: 40px; }
-  .brend-wrapper ul {
+  .brend-wrapper .brend-list {
     display: none; }
   .brend-wrapper .swiper {
     width: 240px;
@@ -391,16 +389,20 @@ body {
   .brend-wrapper .main__button {
     display: none; }
 
+@media (min-width: 525px) and (max-width: 767px) {
+  .brend-wrapper {
+    max-width: 525px; }
+    .brend-wrapper .swiper {
+      width: 532px; } }
+
 @media (min-width: 768px) {
   .brend-wrapper {
     max-width: 720px; }
-    .brend-wrapper ul {
+    .brend-wrapper .brend-list {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-start; }
-    .brend-wrapper .brend-wrapper.hidden li:nth-child(n + 7) {
-      display: none; }
-    .brend-wrapper li {
+    .brend-wrapper .brend-item {
       min-width: 224px;
       display: flex;
       justify-content: space-between;
@@ -432,15 +434,11 @@ body {
 @media (min-width: 1120px) {
   .brend-wrapper {
     max-width: 1056px; }
-    .brend-wrapper li {
+    .brend-wrapper .brend-item {
       min-width: 240px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between; }
-    .brend-wrapper .brend-wrapper.hidden li:nth-child(n + 7) {
-      display: flex; }
-    .brend-wrapper .brend-wrapper.hidden li:nth-child(n + 9) {
-      display: none; }
     .brend-wrapper .swiper {
       display: none !important; } }
 
@@ -453,7 +451,7 @@ body {
 /* main */
 .feedback,
 .responsiveness {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   width: 100%;
@@ -622,6 +620,13 @@ footer {
   footer p:nth-child(1) {
     max-width: 218px; }
 
+@media (min-width: 560px) and (max-width: 767px) {
+  .footer-wrapper {
+    max-width: 525px;
+    display: grid;
+    grid-template-columns: 135px 142px 191px;
+    gap: 46px; } }
+
 @media (min-width: 768px) {
   footer {
     padding-top: 80px;
@@ -731,7 +736,7 @@ footer {
   background: url(./static/dropdown.svg) no-repeat #ff3e79 90% 50%; }
 
 .price-btn:hover {
-  transform: scale(1.2); }
+  border: 2px solid #41f6d7; }
 
 .price-order {
   width: 100%;
@@ -767,7 +772,13 @@ footer {
   cursor: pointer; }
 
 .price-offer:hover {
-  transform: scale(1.2); }
+  border: 2px solid #41f6d7; }
+
+@media (min-width: 525px) and (max-width: 767px) {
+  .price-wrapper {
+    max-width: 525px; }
+    .price-wrapper .swiper {
+      width: 520px; } }
 
 @media (min-width: 768px) {
   .price-wrapper {
@@ -818,20 +829,22 @@ footer {
 .side-menu {
   position: absolute;
   background-color: #fff;
-  width: 100%;
+  width: 113vw;
+  height: 100vh;
   left: 0;
-  top: 98px;
-  z-index: 2; }
+  top: 80px;
+  z-index: 2;
+  position: fixed; }
   .side-menu .header-navigation {
     display: none; }
 
 .nav-list {
-  padding-top: 46px;
+  padding-top: 15px;
   padding-left: 24px; }
   .nav-list ul {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 9px;
     margin-left: -24px; }
   .nav-list a {
     font-family: 'TT Lakes Medium';
@@ -857,7 +870,7 @@ footer {
   flex-direction: row;
   gap: 16px;
   padding-left: 24px;
-  padding-top: 268px;
+  padding-top: 25px;
   padding-bottom: 16px; }
 
 .main-contact {
@@ -897,7 +910,8 @@ footer {
 
 @media (min-width: 1120px) {
   .side-menu.hidden {
-    display: block; }
+    display: block;
+    z-index: 0; }
   .side-menu {
     top: 0;
     left: 0; }
@@ -908,7 +922,9 @@ footer {
       justify-content: space-between;
       padding-top: 30px; }
     .side-menu .header-navigation::after {
-      display: none; } }
+      display: none; }
+    .side-menu .nav-list__icon-menu {
+      padding-top: 141px; } }
 
 .brend-wrapper {
   max-width: 288px;
@@ -934,10 +950,10 @@ footer {
   height: 40px; }
 
 .brend-item:hover {
-  transform: scale(1.2); }
+  border: 2px solid #41f6d7; }
 
 .technology-item:hover {
-  transform: scale(1.2); }
+  border: 2px solid #41f6d7; }
 
 .brend-list,
 .technology-list {
@@ -962,6 +978,7 @@ footer {
   justify-content: space-around;
   align-items: center;
   border: 1px solid #eaeaea;
+  background: #fff;
   border-radius: 6px; }
 
 .swiper-pagination-bullet {
@@ -1000,6 +1017,12 @@ footer {
   align-self: flex-end;
   padding-bottom: 16px; }
 
+@media (min-width: 525px) and (max-width: 767px) {
+  .brend-wrapper {
+    max-width: 525px; }
+    .brend-wrapper .swiper {
+      width: 520px; } }
+
 @media (min-width: 768px) {
   .brend-wrapper {
     max-width: 720px; }
@@ -1019,7 +1042,8 @@ footer {
     border: 1px solid #eaeaea;
     background: #fff;
     box-sizing: border-box; }
-  .brend-wrapper.hidden .technology-item:nth-child(n + 4) {
+  .brend-wrapper.hidden .technology-item:nth-child(n + 4),
+  .brend-wrapper.hidden .brend-item:nth-child(n + 7) {
     display: none; }
   .main__button {
     display: flex;
@@ -1057,17 +1081,19 @@ footer {
     max-width: 1056px; }
   .brend-list {
     justify-content: flex-start;
-    -moz-column-gap: 32px;
-         column-gap: 32px; }
+    -moz-column-gap: 30px;
+         column-gap: 30px; }
   .brend-item {
     min-width: 240px;
     display: flex;
     flex-wrap: wrap; }
   .technology-list {
     justify-content: space-between; }
-  .brend-wrapper.hidden .technology-item:nth-child(n + 4) {
+  .brend-wrapper.hidden .technology-item:nth-child(n + 4),
+  .brend-wrapper.hidden .brend-item:nth-child(n + 7) {
     display: flex; }
-  .brend-wrapper.hidden .technology-item:nth-child(n + 5) {
+  .brend-wrapper.hidden .technology-item:nth-child(n + 5),
+  .brend-wrapper.hidden .brend-item:nth-child(n + 9) {
     display: none; }
   .swiper {
     display: none !important; } }

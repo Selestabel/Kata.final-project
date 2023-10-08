@@ -26,11 +26,11 @@
 }
 
 .brend-item:hover {
-    transform: scale(1.2);
+    border: 2px solid $stick-color;
 }
 
 .technology-item:hover {
-    transform: scale(1.2);
+    border: 2px solid $stick-color;
 }
 
 .brend-list,
@@ -60,6 +60,7 @@
     justify-content: space-around;
     align-items: center;
     border: 1px solid #eaeaea;
+    background: $item-background;
     border-radius: 6px;
 }
 
@@ -108,6 +109,15 @@
     padding-bottom: 16px;
 }
 
+@media (min-width: 525px) and (max-width: 767px) {
+    .brend-wrapper {
+        max-width: 525px;
+        .swiper {
+            width: 520px;
+        }
+    }
+}
+
 @media (min-width: 768px) {
     .brend-wrapper {
         max-width: 720px;
@@ -129,7 +139,8 @@
         background: $item-background;
         box-sizing: border-box;
     }
-    .brend-wrapper.hidden .technology-item:nth-child(n + 4) {
+    .brend-wrapper.hidden .technology-item:nth-child(n + 4),
+    .brend-wrapper.hidden .brend-item:nth-child(n + 7) {
         display: none;
     }
     .main__button {
@@ -176,7 +187,7 @@
     }
     .brend-list {
         justify-content: flex-start;
-        column-gap: 32px;
+        column-gap: 30px;
     }
     .brend-item {
         min-width: 240px;
@@ -186,10 +197,12 @@
     .technology-list {
         justify-content: space-between;
     }
-    .brend-wrapper.hidden .technology-item:nth-child(n + 4) {
+    .brend-wrapper.hidden .technology-item:nth-child(n + 4),
+    .brend-wrapper.hidden .brend-item:nth-child(n + 7) {
         display: flex;
     }
-    .brend-wrapper.hidden .technology-item:nth-child(n + 5) {
+    .brend-wrapper.hidden .technology-item:nth-child(n + 5),
+    .brend-wrapper.hidden .brend-item:nth-child(n + 9) {
         display: none;
     }
     .swiper {
