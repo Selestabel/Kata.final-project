@@ -812,9 +812,17 @@ footer {
   .swiper {
     display: none !important; } }
 
+@media (min-width: 1120px) {
+  .price-wrapper {
+    max-width: 1056px; }
+  .price-item {
+    max-width: 718px; } }
+
 @media (min-width: 1400px) {
   .price-wrapper {
     max-width: 1056px; }
+  .price-item {
+    max-width: none; }
   .price-item p:nth-child(1) {
     min-width: 470px; }
   .price-item p:nth-child(2) {
@@ -1088,7 +1096,9 @@ footer {
     display: flex;
     flex-wrap: wrap; }
   .technology-list {
-    justify-content: space-between; }
+    justify-content: flex-start;
+    -moz-column-gap: 50px;
+         column-gap: 50px; }
   .brend-wrapper.hidden .technology-item:nth-child(n + 4),
   .brend-wrapper.hidden .brend-item:nth-child(n + 7) {
     display: flex; }

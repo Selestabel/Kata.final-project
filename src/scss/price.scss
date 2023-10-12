@@ -191,9 +191,21 @@
     }
 }
 
+@media (min-width: 1120px) {
+    .price-wrapper {
+        max-width: 1056px;
+    }
+    .price-item {
+        max-width: 718px;
+    }
+}
+
 @media (min-width: 1400px) {
     .price-wrapper {
         max-width: 1056px;
+    }
+    .price-item {
+        max-width: none;
     }
     .price-item p:nth-child(1) {
         min-width: 470px;

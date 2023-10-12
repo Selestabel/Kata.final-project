@@ -195,7 +195,8 @@
         flex-wrap: wrap;
     }
     .technology-list {
-        justify-content: space-between;
+        justify-content: flex-start;
+        column-gap: 50px;
     }
     .brend-wrapper.hidden .technology-item:nth-child(n + 4),
     .brend-wrapper.hidden .brend-item:nth-child(n + 7) {
