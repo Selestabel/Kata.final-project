@@ -2,6 +2,7 @@
     max-width: 288px;
     margin: 0 auto;
     .brend-text {
+        height: 80px;
         font-family: 'TT Lakes Light';
         font-size: 16px;
         line-height: 24px;
@@ -11,6 +12,7 @@
         text-transform: uppercase;
         border-top: $border-list;
         margin-top: 40px;
+        background-image: linear-gradient(to left, #ffffff, #f8f8f8);
     }
     .brend-img {
         max-width: 108px;
@@ -69,6 +71,9 @@
 @media (min-width: 768px) {
     .brend-wrapper {
         max-width: 720px;
+        .brend-text {
+            height: 56px;
+        }
         .brend-list {
             display: flex;
             flex-wrap: wrap;

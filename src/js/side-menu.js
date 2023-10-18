@@ -2,6 +2,7 @@
 
 const menuBtn = document.querySelector('.header-navigation__btn')
 const sideMenu = document.querySelector('.side-menu')
+const navHeader = document.querySelector('.header-navigation')
 
 const burger = document.getElementById('burger')
 
@@ -30,28 +31,39 @@ let showMenu = () => {
     sideMenu.classList.remove('hidden')
     menuIsHidden = false
     burger.src = './img/icon.x.svg'
-    settingsIcon.style = 'display: none'
-    settingsIcon2.style = 'display: none'
-    settingsIcon3.style = 'display: none'
-    settingsIcon4.style = 'display: none'
+        // settingsIcon.style = 'display: none'
+        // settingsIcon2.style = 'display: none'
+        // settingsIcon3.style = 'display: none'
+        // settingsIcon4.style = 'display: none'
     searchIcon.src = './img/icon.search.svg'
-    headerBackground.style = 'background: white; z-index: 2; position: relative;'
-    headerMargin.style = 'max-width: fit-content; margin: 0;'
+    headerBackground.style = 'background: white; z-index: 2;'
+    headerMargin.style =
+        'max-width: fit-content; margin: 0; position: fixed; z-index: 2;'
     shadow.classList.remove('hidden')
+    document.querySelector('.header-nav__list').classList.add('visible')
+    document.querySelector('.header-nav__list').classList.remove('hidden')
 }
 
 let hideMenu = () => {
     sideMenu.classList.add('hidden')
     menuIsHidden = true
     burger.src = './img/icon1.svg'
-    settingsIcon.style = 'display: flex'
-    settingsIcon2.style = 'display: flex'
-    settingsIcon3.style = 'display: flex'
-    settingsIcon4.style = 'display: flex'
+        // settingsIcon.style = 'display: flex'
+        // settingsIcon2.style = 'display: flex'
+        // settingsIcon3.style = 'display: flex'
+        // settingsIcon4.style = 'display: flex'
     searchIcon.src = './img/icon2.svg'
+    navHeader.src = 'gap: 16px'
     headerBackground.style = 'background: #f8f8f8; z-index: 1;'
-    headerMargin.style = 'max-width: none; margin: 0 auto;'
-    shadow.classList.add('hidden')
+    headerMargin.style = 'max-width: 720px; margin: 0 auto; z-index: 1;'
+    if (
+        document.querySelector('.feedback').classList.contains('hidden') &&
+        document.querySelector('.responsiveness').classList.contains('hidden')
+    ) {
+        shadow.classList.add('hidden')
+    }
+    document.querySelector('.header-nav__list').classList.remove('visible')
+    document.querySelector('.header-nav__list').classList.add('hidden')
 }
 
 menuBtn.addEventListener('click', () => {
@@ -59,5 +71,43 @@ menuBtn.addEventListener('click', () => {
         showMenu()
     } else {
         hideMenu()
+    }
+})
+
+// order-call
+
+let orderCallBtn = document.querySelector('#order-call')
+let orderCallModal = document.querySelector('.feedback')
+let closeBtn = document.querySelectorAll('.feedback-img')
+
+orderCallBtn.addEventListener('click', () => {
+    orderCallModal.classList.remove('hidden')
+    shadow.classList.remove('hidden')
+    if (!document.querySelector('.side-menu').classList.contains('hidden')) {
+        hideMenu()
+    }
+})
+
+closeBtn[0].addEventListener('click', () => {
+    if (document.querySelector('.side-menu').classList.contains('hidden')) {
+        shadow.classList.add('hidden')
+    }
+    orderCallModal.classList.add('hidden')
+})
+
+let responsivenessBtn = document.querySelector('#responsiveness')
+let responsivenessModal = document.querySelector('.responsiveness')
+
+responsivenessBtn.addEventListener('click', () => {
+    responsivenessModal.classList.remove('hidden')
+    shadow.classList.remove('hidden')
+    if (!document.querySelector('.side-menu').classList.contains('hidden')) {
+        hideMenu()
+    }
+})
+closeBtn[1].addEventListener('click', () => {
+    responsivenessModal.classList.add('hidden')
+    if (document.querySelector('.side-menu').classList.contains('hidden')) {
+        shadow.classList.add('hidden')
     }
 })
