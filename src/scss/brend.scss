@@ -1,19 +1,22 @@
+.brend-text {
+    height: 56px;
+    max-width: 100%;
+    padding-left: 16px;
+    font-family: 'TT Lakes Light';
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    color: #7e7e82;
+    padding-bottom: 0;
+    text-transform: uppercase;
+    border-top: $border-list;
+    margin-top: 40px;
+    background-image: linear-gradient(to left, #ffffff, #f8f8f8);
+}
+
 .brend-wrapper {
     max-width: 288px;
     margin: 0 auto;
-    .brend-text {
-        height: 80px;
-        font-family: 'TT Lakes Light';
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: -0.2px;
-        color: #7e7e82;
-        margin-bottom: 32px;
-        text-transform: uppercase;
-        border-top: $border-list;
-        margin-top: 40px;
-        background-image: linear-gradient(to left, #ffffff, #f8f8f8);
-    }
     .brend-img {
         max-width: 108px;
         max-height: 52px;
@@ -69,11 +72,12 @@
 }
 
 @media (min-width: 768px) {
+    .brend-text {
+        padding-left: 24px;
+        height: 56px;
+    }
     .brend-wrapper {
         max-width: 720px;
-        .brend-text {
-            height: 56px;
-        }
         .brend-list {
             display: flex;
             flex-wrap: wrap;
@@ -119,6 +123,10 @@
 }
 
 @media (min-width: 1120px) {
+    .brend-text {
+        height: 56px;
+        padding-left: 6px;
+    }
     .brend-wrapper {
         max-width: 1056px;
         .brend-item {

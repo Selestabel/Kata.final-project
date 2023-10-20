@@ -31,7 +31,7 @@ footer {
     .footer-wrapper {
         max-width: 525px;
         display: grid;
-        grid-template-columns: 135px 142px 191px;
+        grid-template-columns: 135px 142px 147px;
         gap: 46px;
     }
 }
@@ -40,6 +40,7 @@ footer {
     footer {
         padding-top: 80px;
         padding-bottom: 25px;
+        padding-right: 20px;
         div {
             max-width: 720px;
             display: flex;
@@ -59,12 +60,5 @@ footer {
             min-width: 213px;
             text-align: right;
         }
-    }
-}
-
-@media (min-width: 1220px) {
-    .footer-wrapper {
-        max-width: 1056px;
-        gap: 147px;
     }
 }

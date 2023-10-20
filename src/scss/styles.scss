@@ -7,6 +7,7 @@
 
 .header {
     width: 100%;
+    background-color: white;
 }
 
 .header_wrapper {
@@ -219,7 +220,7 @@
         padding-top: 20px;
         max-width: 525px;
         display: grid;
-        grid-template-columns: 250px 150px;
+        grid-template-columns: 250px 280px;
     }
 }
 
@@ -411,5 +412,11 @@
     .price,
     footer {
         padding-left: 350px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .caption__title::before {
+        left: 265px;
     }
 }
