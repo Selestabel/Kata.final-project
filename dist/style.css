@@ -353,7 +353,7 @@ body {
 
 @media (min-width: 1440px) {
   .caption__title::before {
-    left: auto; } }
+    left: 265px; } }
 
 .brend-text {
   height: 56px;
@@ -792,7 +792,7 @@ footer {
   cursor: pointer; }
 
 .price-offer:hover {
-  border: 2px solid #41f6d7; }
+  border: 1px solid #41f6d7; }
 
 @media (min-width: 525px) and (max-width: 767px) {
   .price-wrapper {
